@@ -1,6 +1,5 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import Todo from "./todo";
 
-const App = () => <div>hello world</div>;
-
-ReactDOM.render(<App />, document.getElementById("root"));
+ReactDOM.render(<Todo />, document.getElementById("root"));
