@@ -10,7 +10,7 @@ install:
   - npm install
 
 script:
-  - npm run deploy
+  - npm run build
 
 after_script:
   - cd ./build
