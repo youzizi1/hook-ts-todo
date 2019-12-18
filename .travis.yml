@@ -1,0 +1,30 @@
+language: node_js
+
+node_js: stable
+
+cache:
+  directories:
+    - node_modules
+
+install:
+  - npm install
+
+script:
+  - npm run deploy
+
+after_script:
+  - cd ./dist
+  - git init
+  - git config user.name "ugu"
+  - git config user.email "yinyun957@gmail.com"
+  - git add .
+  - git commit -m "Travis CI Auto Builder :$(date '+%Y-%m-%d %H:%M:%S' -d '+8 hour')"
+  - git push --force --quiet "https://${hook_ts_todo_token}@${VC_REF}" master:gh-pages
+
+branches:
+  only:
+    - master
+
+env:
+  global:
+    - VC_REF: github.com/youzizi1/hook-ts-todo.git
