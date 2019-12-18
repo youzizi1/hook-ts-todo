@@ -13,7 +13,7 @@ script:
   - npm run deploy
 
 after_script:
-  - cd ./dist
+  - cd ./build
   - git init
   - git config user.name "ugu"
   - git config user.email "yinyun957@gmail.com"
